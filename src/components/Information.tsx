@@ -103,10 +103,6 @@ const ScrollWrapper = styled.div`
 	&::-webkit-scrollbar {
 		display: none; /* Hide scrollbar for Chrome, Safari and Opera */
 	}
-
-	&:hover {
-		/* overflow-y: scroll; */
-	}
 `;
 
 const Synopsis = styled.div`

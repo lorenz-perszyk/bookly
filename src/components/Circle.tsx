@@ -59,8 +59,8 @@ const Circle = React.forwardRef<HTMLInputElement, CircleProps>(
 
 export default Circle;
 
-// S T Y L E S
 
+// S T Y L E S
 const MainCircle = styled.div`
 	width: 550px;
 	height: 550px;

@@ -149,7 +149,7 @@ const Display: React.FC<DisplayProps> = ({
 			<LottieWrapper ref={animationRef}>
 				<Lottie
 					animationData={circles}
-					autoplay={true}
+					autoplay={false}
 					loop={true}
 					width={1080}
 					height={1080}
@@ -161,8 +161,8 @@ const Display: React.FC<DisplayProps> = ({
 
 export default Display;
 
-// S T Y L E S
 
+// S T Y L E S
 const DisplayWrapper = styled.div`
 	position: relative;
 	z-index: 1;

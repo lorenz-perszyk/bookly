@@ -4,21 +4,12 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { MainButton, SecondaryButton } from "./Buttons";
+import { MainButton } from "./Buttons";
 import { IGetBooks, IResults } from "../helpers/Interfaces";
 
 // C O M P O N E N T
 interface ContainerProps {
 	readonly active: string;
-}
-
-interface ISearchParams {
-	keyword: string;
-	category?: string;
-	pageMin?: string;
-	pageMax?: string;
-	releaseMin?: string;
-	releaseMax?: string;
 }
 
 interface SearchProps {
@@ -35,8 +26,6 @@ const Search: React.FC<SearchProps> = ({
 	toggleFlex,
 	newSearch,
 	active,
-	results,
-	state,
 }) => {
 	const [currentSearch, setCurrentSearch] = useState<IGetBooks | null>(null);
 	const formRef = useRef<HTMLFormElement>(null);

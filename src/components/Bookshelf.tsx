@@ -1,5 +1,5 @@
 // I M P O R T S
-import React, { useRef, createRef } from "react";
+import React, { createRef } from "react";
 import styled from "@emotion/styled";
 import { RxCross2 } from "react-icons/rx";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
@@ -8,8 +8,8 @@ import { IBookshelf } from "../helpers/Interfaces";
 // C O M P O N E N T
 interface BookshelfProps {
 	bookshelf: IBookshelf[] | [];
-	removeBook: (id: string) => void;
 	active: string;
+	removeBook: (id: string) => void;
 	toggleFlex: (tab: string) => void;
 	showBook: (id: string) => void;
 }

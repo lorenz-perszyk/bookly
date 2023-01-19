@@ -76,6 +76,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 
 export default Sidebar;
 
+
 // S T Y L E S
 
 const SidebarWrapper = styled.div`
