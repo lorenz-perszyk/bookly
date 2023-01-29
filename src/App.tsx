@@ -1,5 +1,5 @@
 // I M P O R T S
-import { useState, useEffect, FC } from "react";
+import { useState, useEffect, useRef, FC } from "react";
 import "./App.css";
 import Sidebar from "./components/Sidebar";
 import Display from "./components/Display";
@@ -22,6 +22,7 @@ const App: FC = () => {
 	const [showingSavedBook, setShowingSavedBook] = useState<boolean>(false);
 	const [state, setState] = useState<string>("start");
 	const [show, setShow] = useState<boolean>(false);
+	const searching = useRef(false);
 
 	const key = "AIzaSyCBY4Irp4BE_U1wmg5I01DpX-ixPHEDfMI";
 
@@ -39,6 +40,7 @@ const App: FC = () => {
 	};
 	
 	const getResults = async (searchData: IGetBooks, searchTerm: string, total = 0, fetched = 0) => {
+		// Check if in searching mode, if not stop fetching results
 		let totalResults = total;
 		let fetchedResults = fetched;
 
@@ -60,6 +62,7 @@ const App: FC = () => {
 				setState("nothing found");
 				return;
 			} else {
+				if (!searching.current) {return}
 				setState("showing results")
 			}
 
@@ -116,6 +119,7 @@ const App: FC = () => {
 			}));
 
 			// If any books matched the search criteria, add them to the results array
+			if (!searching.current) {return};
 			if (newBooks.length > 0) {
 				setState("showing results");
 				setResults((prev) => [...prev, newBooks].flat());
@@ -123,6 +127,7 @@ const App: FC = () => {
 	};
 	
 	const getBooks = (data: IGetBooks) => {
+		searching.current = true
 		setResults([]);
 		setShowingSavedBook(false);
 		let searchTerm = getSearchTerm(data);
@@ -130,6 +135,7 @@ const App: FC = () => {
 	};
 
 	const newSearch = () => {
+		searching.current = false
 		setShowingSavedBook(false);
 		setState("start");
 		setTimeout(() => {

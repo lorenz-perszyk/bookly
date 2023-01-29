@@ -61,19 +61,11 @@ export default Circle;
 
 
 // S T Y L E S
-const MainCircle = styled.div`
-	width: 550px;
-	height: 550px;
-	position: absolute;
-	z-index: 0;
-	border-radius: 100%;
-	background-color: #ebae8c;
-	cursor: pointer;
-`;
 
 const Title = styled.div`
 	font-family: "Goblin One";
 	font-size: 4rem;
+	transition: font-size 0.3s;
 
 	&.transition-enter {
 		opacity: 0;
@@ -125,4 +117,17 @@ const TextWrapper = styled.div`
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+`;
+
+const MainCircle = styled.div`
+	width: 550px;
+	height: 550px;
+	position: absolute;
+	z-index: 0;
+	border-radius: 100%;
+	background-color: #ebae8c;
+	cursor: pointer;
+	&:hover ${Title} {
+		font-size: 4.2rem
+	}
 `;

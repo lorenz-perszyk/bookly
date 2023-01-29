@@ -4,6 +4,7 @@
 *.cpuprofile
 *.local
 *.log
+
 /.vscode/
 /packages/vite/LICENSE
 dist
@@ -14,3 +15,4 @@ playground-temp
 temp
 TODOs.md
 .eslintcache
+deploy.sh

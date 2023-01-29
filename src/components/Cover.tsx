@@ -108,7 +108,7 @@ const Cover: React.FC<CoverProps> = ({
 					)}
 					<SecondaryButton
 						onClick={addToShelf}
-						disabled={bookshelf.includes(currentBook ? true : false)}
+						disabled={(bookshelf.includes(currentBook!)) ? true : false}
 					>
 						Save to Bookshelf
 					</SecondaryButton>

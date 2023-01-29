@@ -88,6 +88,7 @@ const SidebarWrapper = styled.div`
 	flex-direction: column;
 	background-color: whitesmoke;
 	border-right: 2px solid black;
+	z-index: 5;
 `;
 
 const NavWrapper = styled.div`
