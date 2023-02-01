@@ -149,7 +149,7 @@ const Display: React.FC<DisplayProps> = ({
 			<LottieWrapper ref={animationRef}>
 				<Lottie
 					animationData={circles}
-					autoplay={false}
+					autoplay={true}
 					loop={true}
 					width={1080}
 					height={1080}
